@@ -6,7 +6,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'whysilon.github.io',
   plugins: [
     vue({
       template: {

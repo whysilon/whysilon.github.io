@@ -27,7 +27,7 @@ export default {
 
 <template>
   <main>
-    <h1>{{ message }}</h1>
+    <h1 class="text-3xl font-bold underline">{{ message }}</h1>
     <button @click="changeMsg">Change Message</button>
     <button @click="goToAbout">Go to About</button>
   </main>
