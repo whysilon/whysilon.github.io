@@ -1,14 +1,16 @@
 <template>
-    <div class="min-h-screen flex items-center justify-center bg-gray-100">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-                <div class="mb-4">
-                    <SignIn/>
-                </div>
-        </div>
-    </div>
+  <div id="sign-in" v-if="signedOut"></div>
 </template>
 
-<script>
+<script setup>
+import { onMounted, ref } from "vue";
+const signedOut = ref(true);
 
+onMounted(async () => {
+  await Clerk.load();
+  const signInDiv = document.getElementById("sign-in");
+  Clerk.mountSignIn(signInDiv);
+
+  console.log("ClerkJS is loaded");
+});
 </script>

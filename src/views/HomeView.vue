@@ -1,28 +1,27 @@
 <script>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 export default {
-    setup() {
-        const message = ref('Hello!')
-        const changeMsg = () => {
-            if (message.value === "Hello") {
-                message.value = "Hey"
-            } else {
-                message.value = "Hello"
-            }
-        }
-        return {
-            message,
-            changeMsg
-        }
-    },
-    methods: {
-      goToAbout() {
-        this.$router.push("/about")
+  setup() {
+    const message = ref("Hello!");
+    const changeMsg = () => {
+      if (message.value === "Hello") {
+        message.value = "Hey";
+      } else {
+        message.value = "Hello";
       }
-    }
-}
-
+    };
+    return {
+      message,
+      changeMsg,
+    };
+  },
+  methods: {
+    goToAbout() {
+      this.$router.push("/about");
+    },
+  },
+};
 </script>
 
 <template>

@@ -1,35 +1,11 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-const app = createApp(App)
-import { Clerk } from '@clerk/clerk-js'
+const app = createApp(App);
 
-const clerkPubKey = import.meta.env.VITE_PUBLIC_CLERK_PUBLISHABLE_KEY
+app.use(router);
 
-const clerk = new Clerk(clerkPubKey)
-await clerk.load()
-
-if (clerk.user) {
-  document.getElementById('app').innerHTML = `
-    <div id="user-button"></div>
-  `
-
-  const userButtonDiv = document.getElementById('user-button')
-
-  clerk.mountUserButton(userButtonDiv)
-} else {
-  document.getElementById('app').innerHTML = `
-    <div id="sign-in"></div>
-  `
-
-  const signInDiv = document.getElementById('sign-in')
-
-  clerk.mountSignIn(signInDiv)
-}
-
-app.use(router)
-
-app.mount('#app')
+app.mount("#app");
