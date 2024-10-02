@@ -18,9 +18,6 @@ onMounted(async () => {
         <RouterLink to="/home" class="text-white hover:text-gray-400"
           >Home</RouterLink
         >
-        <RouterLink to="/about" class="text-white hover:text-gray-400"
-          >About</RouterLink
-        >
         <RouterLink to="/ar" class="text-white hover:text-gray-400"
           >AR</RouterLink
         >
