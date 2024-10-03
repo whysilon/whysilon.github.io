@@ -36,8 +36,12 @@ router.beforeEach(async (to, from) => {
   if (to.meta.requiresAuth && !Clerk.user) {
     // If the user is not authenticated and is trying to access a protected route, redirect to login
     console.log("User not authenticated, redirecting to login...");
-    return {path: '/', query: {redirect: to.fullPath}}
+    return {path: '/'}
   }
-
+  else if (!to.meta.requiresAuth && Clerk.user) {
+    // If the user is authenticated and is trying to access a public route, redirect to home
+    console.log("User authenticated, redirecting to home...");
+    return {path: '/home'}
+  }
 });
 export default router;

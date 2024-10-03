@@ -10,16 +10,20 @@
   },
   "dependencies": {
     "@clerk/clerk-js": "^5.24.0",
+    "@primevue/themes": "^4.0.7",
+    "primevue": "^4.0.7",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
+    "@primevue/auto-import-resolver": "^4.0.7",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "prettier": "3.3.3",
     "tailwindcss": "^3.4.13",
+    "unplugin-vue-components": "^0.27.4",
     "vite": "^5.3.1"
   }
 }

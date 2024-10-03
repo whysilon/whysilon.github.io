@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
-
 import { onMounted } from "vue";
+import Toolbar from "primevue/toolbar";
 
 onMounted(async () => {
   await Clerk.load();
@@ -12,17 +12,18 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header class="bg-gray-800 text-white p-4">
-    <div class="wrapper mx-auto">
-      <nav class="flex justify-center space-x-4">
-        <RouterLink to="/home" class="text-white hover:text-gray-400"
-          >Home</RouterLink
-        >
-        <RouterLink to="/ar" class="text-white hover:text-gray-400"
-          >AR</RouterLink
-        >
+  <header class="bg-gray-800 text-white p-4 fixed top-0 left-0 w-full z-10">
+    <Toolbar>
+      <template #start>
+      <nav>
+          <Button as="RouterLink" to="/home" label="Home" primary/>
+          <Button as="RouterLink" to="/home/ar" label="AR" primary/>
       </nav>
-      <div id="user-button"></div>
-    </div>
+      </template>
+      <template #end>
+        <div id="user-button" ></div>
+      </template>
+    </Toolbar>
   </header>
 </template>
+
