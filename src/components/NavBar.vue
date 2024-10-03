@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from "vue-router";
 import { onMounted } from "vue";
 import Toolbar from "primevue/toolbar";
 
@@ -12,12 +11,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header class="bg-gray-800 text-white p-4 fixed top-0 left-0 w-full z-10">
+  <header>
     <Toolbar>
       <template #start>
       <nav>
-          <Button as="RouterLink" to="/home" label="Home" primary/>
-          <Button as="RouterLink" to="/home/ar" label="AR" primary/>
+          <Button as="RouterLink" to="/home" label="Home" class="--p-button-"/>
+          <Button as="RouterLink" to="/home/ar" label="AR"/>
       </nav>
       </template>
       <template #end>
