@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ARView from "@/views/ARView.vue";
+import ComputerVision from "@/views/ComputerVision.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,11 @@ const router = createRouter({
           path: "ar",
           name: "ar",
           component: ARView
+        },
+        {
+          path: "cv",
+          name: "computer-vision",
+          component: ComputerVision
         }
       ]
     },

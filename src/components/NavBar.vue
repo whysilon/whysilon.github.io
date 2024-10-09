@@ -1,6 +1,8 @@
 <script setup>
-import { onMounted } from "vue";
-import Toolbar from "primevue/toolbar";
+import Button from "primevue/button";
+import Menubar from "primevue/menubar";
+import { onMounted,ref } from "vue";
+
 
 onMounted(async () => {
   await Clerk.load();
@@ -8,21 +10,28 @@ onMounted(async () => {
 
   Clerk.mountUserButton(userButtonDiv);
 });
+
+const items = ref([
+  { label: "Home", icon: "pi pi-home", to: "/home" },
+  { label: "AR", icon: "pi pi-cog", to: "/home/ar" },
+  { label: "CV", icon: "pi pi-cog", to: "/home/cv" },
+])
 </script>
 
 <template>
   <header>
-    <Toolbar>
-      <template #start>
-      <nav>
-          <Button as="RouterLink" to="/home" label="Home" class="--p-button-"/>
-          <Button as="RouterLink" to="/home/ar" label="AR"/>
-      </nav>
+    <Menubar :model="items">
+      <template #item="{item, props, hasSubmenu, root}">
+        <nav class="gap-2">
+            <span :class="item.icon"></span>
+            <Button as="RouterLink" :to="item.to" :label="item.label" class="--p-button-"></Button>
+        </nav>
       </template>
       <template #end>
         <div id="user-button" ></div>
       </template>
-    </Toolbar>
+    </Menubar>
+    
   </header>
 </template>
 

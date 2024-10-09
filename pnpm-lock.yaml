@@ -14,6 +14,9 @@ importers:
       '@primevue/themes':
         specifier: ^4.0.7
         version: 4.0.7
+      primeicons:
+        specifier: ^7.0.0
+        version: 7.0.0
       primevue:
         specifier: ^4.0.7
         version: 4.0.7(vue@3.5.8)
@@ -1199,6 +1202,9 @@ packages:
     resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
     hasBin: true
+
+  primeicons@7.0.0:
+    resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
 
   primevue@4.0.7:
     resolution: {integrity: sha512-88qazHqldkqsCxvhjnjO65XMBfJyHQoFW3BQvrJYO6RqPheHB4f7cY61eqtBpJAjnM5x+YKTZiWx/gBuUzqT7Q==}
@@ -2607,6 +2613,8 @@ snapshots:
   preact@10.24.1: {}
 
   prettier@3.3.3: {}
+
+  primeicons@7.0.0: {}
 
   primevue@4.0.7(vue@3.5.8):
     dependencies:
